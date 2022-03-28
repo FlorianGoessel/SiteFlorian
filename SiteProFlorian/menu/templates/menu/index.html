@@ -1,0 +1,83 @@
+{% load static %}
+
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelementplayer.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'menu/style.css' %}">
+    <title>Florian Goessel</title>
+
+</head>
+<body>
+
+
+    <a href="{% url 'main:index' %}"><img id="logo" src="{% static 'menu/images/logo_LaF.png' %}"></a>
+
+    <div class="h1">
+        <h1>Mes sons</h1>
+    </div>
+
+    <div class="les_Sons">
+        {% for sons in sons %}
+            <div class="les_Sons_Items">
+                {% if sons.explicitcontent == 1 %}
+                    <br>
+                    <img id="ExplicitContent" src="{% static 'menu/images/Explicitcontent.png' %}">
+                {% endif %}
+
+                    <span class ="les_Sons_Titre">{{sons.titre}}</span>
+
+                    <span class ="les_Sons_Beatmaker">{{sons.beatmaker}}</span>
+                    <br>
+                    <span class ="les_Sons_Date">{{sons.date}}</span>
+                    </br>
+
+                    <div class="hover-title">..................</div>
+                    <div class="hover-image"><img src="{{ sons.cover.url }}"></div>
+
+
+                <div class="container">
+                <div class="music-player">
+
+
+                    <div class="titre">
+                        <h3>
+                            {{sons.titre}}
+                        </h3>
+                    </div>
+
+       <div class="lecteur">
+        <audio class="fc-media" style="width: 100%;">
+         <source src="{% if sons.audio_file %}{{sons.audio_file.url}} {% else %} {{sons.audio_link}} {% endif %}" type="audio/mp3"/>
+        </audio>
+
+       </div>
+
+      </div>
+     </div>
+
+
+
+
+
+
+
+            </div>
+        {% endfor %}
+    </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js">
+  </script>
+  <script src="{% static './script.js' %}">
+  </script>
+
+
+
+</body>
+</html>
+

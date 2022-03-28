@@ -1,0 +1,47 @@
+body {
+    background :linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/Fond.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0px;
+  font-family: Arial;
+  color : white;
+}
+
+.center{
+     position: fixed; /* or absolute */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.BoutonConnexion button{
+
+	background-color: #8b0009ee;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 15px 100px;
+	display: block;
+	text-align: center;
+	font-size: 18px;
+
+}
+
+
+.BoutonConnexion{
+
+	margin: 4px 2px;
+	opacity: 0.6;
+	transition: 0.3s;
+    margin-top: 30px;
+
+}
+
+
+.BoutonConnexion:hover {
+
+	opacity: 1
+}

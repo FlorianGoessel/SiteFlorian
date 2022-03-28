@@ -1,0 +1,20 @@
+{% load static %}
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <title>Florian Goessel</title>
+</head>
+<body>
+    <div class="center">
+        <img id="logo" src="{% static 'main/images/logo_LaF.png' %}">
+
+
+        <div class="BoutonConnexion">
+            <button onclick="window.location.href = '{% url 'menu:index' %}';">Entrer</button>
+        </div>
+    </div>
+
+</body>
+</html>
